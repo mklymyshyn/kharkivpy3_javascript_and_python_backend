@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>JavaScript and Python back-end</title>
+    {% assets "css_core" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+</head>
+<body>
+
+<!-- dynamically inserting title from config -->
+<div id="holder"></div>
+
+<h3>Building public Widget</h3>
+
+<hr />
+
+<!-- difference only within CSS -->
+<h3 class="chrome17">Browser is Chrome 17</h3>
+<h3 class="safari5">Browser is Safari 5</h3>
+
+<hr />
+Nice & Smooth with Flask
+<!-- JS area -->
+{% assets "js_core" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% if debug %}
+    {% assets "js_conf" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    {% assets "js_templates" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    {% assets "js_app" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    {% assets "browserspec_assets_loader" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+{% else %}
+    {% assets "js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+{% endif %}
+</body>
+</html>
