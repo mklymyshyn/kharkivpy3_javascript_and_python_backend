@@ -72,7 +72,7 @@ def register(app, assets):
         '*.tpl',
     )
 
-    register_template_bundle(
+    templates_bundle = register_template_bundle(
         templates,
         namespace='KHARKIVPYTPL',
         name='js_templates',
@@ -112,9 +112,10 @@ def register(app, assets):
 
     # build app
     app_build = Bundle(
-        "src/js/compiled/conf/*.js",
-        "src/js/compiled/*.js",
-        "js/compiled/assets-loader.js",
+        conf_app,
+        templates_bundle,
+        client_app,
+        browserspec_assets_loader,
         output='js/app.js'
     )
 

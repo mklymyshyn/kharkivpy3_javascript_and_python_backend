@@ -11,7 +11,8 @@ app = Flask(__name__)
 
 app.config.update(
     DEBUG=True,
-    ASSETS_DEBUG=True
+    ASSETS_DEBUG=False,
+    ASSETS_CDN='http://127.0.0.1:5000/static/'
 
 )
 
